@@ -114,12 +114,15 @@ impl App for TreeBrowser {
 					});
 				});
 
-				let selected = if self.selection.is_right {
-					&children[self.selection.index]
-				} else {
-					path[self.selection.index]
-				};
-				ui.label(selected.names.join("\n") + "\n---------\n" + &selected.description);
+				ui.vertical(|ui|{
+					ui.label("======== DESCRIPTION ========");
+					let selected = if self.selection.is_right {
+						&children[self.selection.index]
+					} else {
+						path[self.selection.index]
+					};
+					ui.label(selected.names.join("\n") + "\n---------\n" + &selected.description);
+				});
 			});
 		});
 	}
