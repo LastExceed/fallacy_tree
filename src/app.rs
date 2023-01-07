@@ -56,6 +56,7 @@ impl TreeBrowser {
 impl App for TreeBrowser {
 	fn update(&mut self, ctx: &Context, _frame: &mut Frame) {
 		CentralPanel::default().show(ctx, |ui| {
+			ui.label("WIP WARNING! LOTS OF STUFF STILL IN THE WRONG PLACE!");
 			ui.horizontal_top(|ui| {
 				let mut path = vec![&self.tree_root];
 
